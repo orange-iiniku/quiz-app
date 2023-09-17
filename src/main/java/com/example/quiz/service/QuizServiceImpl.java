@@ -44,13 +44,13 @@ public class QuizServiceImpl implements QuizService {
 		// TODO 自動生成されたメソッド・スタブ
 		//クイズの正解不正解を判定用変数
 		Boolean check = false;
-		//大砲のクイズを取得
+		//対象のクイズを取得
 		Optional<Quiz> optQuiz = repository.findById(id);
 		//値存在チェック
 		if (optQuiz.isPresent()) {
 			Quiz quiz = optQuiz.get();
 			//クイズの回答をチェック
-			if (quiz.getAuthor().equals(myAnswer)) {
+			if (quiz.getAnswer().equals(myAnswer)) {
 				check = true;
 			}
 		}
